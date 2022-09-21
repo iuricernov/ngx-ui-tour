@@ -21,18 +21,24 @@ import { NgbTourService } from './ng-bootstrap-tour.service';
         <button
           *ngIf="tourService.hasPrev(step)"
           class="btn btn-sm btn-default"
+          [style]="step?.prevBtnColor ? 'color: ' + step?.prevBtnColor : ''"
           (click)="tourService.prev()"
         >
           « {{ step?.prevBtnTitle }}
         </button>
         <button
           *ngIf="tourService.hasNext(step) && !step.nextOnAnchorClick"
-          class="btn btn-sm btn-default"
+          class="btn btn-sm btn-default {{step?.nextBtnClass}}"
+          [style]="step?.nextBtnColor ? 'color: ' + step?.nextBtnColor : ''"
           (click)="tourService.next()"
         >
           {{ step?.nextBtnTitle }} »
         </button>
-        <button class="btn btn-sm btn-default" (click)="tourService.end()">
+        <button 
+          class="btn btn-sm btn-default {{step?.endBtnClass}}"
+          [style]="step?.endBtnColor ? 'color: ' + step?.endBtnColor : ''"
+          (click)="tourService.end()"
+        >
           {{ step?.endBtnTitle }}
         </button>
       </div>

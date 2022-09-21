@@ -20,8 +20,11 @@ export interface IStepOption {
     placement?: any;
     disableScrollToAnchor?: boolean;
     prevBtnTitle?: string;
+    prevBtnColor?: string;
     nextBtnTitle?: string;
+    nextBtnColor?: string;
     endBtnTitle?: string;
+    endBtnColor?: string;
     enableBackdrop?: boolean;
     isAsync?: boolean;
     isOptional?: boolean;
